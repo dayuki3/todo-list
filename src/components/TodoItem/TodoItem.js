@@ -6,10 +6,10 @@ const cx = classNames.bind(styles);
 
 class TodoItem extends Component {
 
-    shouldComponentUpdate(nextProps, nextState){
-        return this.props.todos !== nextProps.todos;
-    }
-
+    // shouldComponentUpdate(nextProps, nextState){
+    //     return this.props.done !== nextProps.done;
+    // }
+    
     render() {
         const { done, children, onToggle, onRemove, id } = this.props;
         const liClassNames = cx(
@@ -26,7 +26,7 @@ class TodoItem extends Component {
                         e.stopPropagation();
                         }}>삭제</button>
                 </div>
-                <input className={cx('task-state-checkbox')} id={`test-${id}`} type="checkbox" readOnly checked={done} />
+                <input className={cx('task-state-checkbox')} id={`test-${id}`} type="checkbox"readOnly checked={done} />
                 <label className={cx('task-detail')}>
                     <span htmlFor="test" className={cx('task-description')}>{children}</span>
                 </label>
